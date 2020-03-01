@@ -1,7 +1,28 @@
 console.log("Up and running!");
 
-const cards=["queen", "queen", "king", "King"];
+//const cards=["queen", "queen", "king", "King"];
+//change const to myArray
 const cardsInPlay=[];
+const cards = [
+{
+	rank: "queen",
+	suit: "hearts",
+	cardImage: "images/queen-of-hearts.png"
+},{
+	rank: "queen",
+	suit: "diamonds",
+	cardImage: "images/queen-of-diamonds.png"
+},{
+	rank: "king",
+	suit: "hearts",
+	cardImage: "images/king-of-hearts.png"
+},{
+	rank: "king",
+	suit: "diamonds",
+	cardImage: "images/king-of-diamonds.png"
+} ];
+
+
 
 function checkForMatch () {
 
@@ -13,18 +34,26 @@ function checkForMatch () {
 
 }
 
-function flipCard(cardID, cardID2) {
+function flipCard(cardID1, cardID2) {
+	//pushing the cards into the empty array
+	cardsInPlay.push(cards[cardID1].rank);
 
-	cardsInPlay.push(cards[cardID]);
-	cardsInPlay.push(cards[cardID2]);
+	cardsInPlay.push(cards[cardID2].rank);
 
-	console.log("User flipped " + cards[cardID]);
-	console.log("User flipped " + cards[cardID2]);
+	//revealing the cards
+	console.log("User flipped " + cards[cardID1].rank);
+	console.log(cards[cardID1].cardImage);
+	console.log(cards[cardID1].suit);
+	
+	console.log("User flipped " + cards[cardID2].rank);
+	console.log(cards[cardID2].cardImage);
+	console.log(cards[cardID2].suit);
 
 	if (cardsInPlay.length === 2) {
 		console.log("there's 2 cards");
 	}
 
+	//function for checking match
 	checkForMatch();
 
 }
