@@ -1,7 +1,5 @@
 console.log("Up and running!");
 
-//const cards=["queen", "queen", "king", "King"];
-//change const to myArray
 const cardsInPlay=[];
 const cards = [
 {
@@ -60,7 +58,5 @@ function createBoard (){
 		
 		}
 }
-//link game-board to a constant
-//const cardTable = document.getElementById('game-board');
 
 createBoard();
